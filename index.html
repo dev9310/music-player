@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Music Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Slick Slider CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel="stylesheet" href="style.css">
+
+
+
+</head>
+
+<body>
+    <!-- Navbar for Small Screens -->
+    <nav class="navbar navbar-expand-md d-md-none bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand text-warning overflow-hidden" href="#">RhythmoTune</a>
+            <button class="menu-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false">
+                &#x22EE; <!-- 3-dot Icon -->
+            </button>
+            <div class="collapse navbar-collapse" id="sidebarMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Categories</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Artists</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Playlists</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Layout -->
+    <div class="main-layout grid ">
+        <!-- Sidebar for Desktop -->
+        <div class="sidebar d-md-flex flex-column  rounded-4  ">
+            <h4 class="text-warning">RhythmoTune</h4>
+            <a href="#">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="512" height="512">
+                    <path
+                        d="M23.121,9.069,15.536,1.483a5.008,5.008,0,0,0-7.072,0L.879,9.069A2.978,2.978,0,0,0,0,11.19v9.817a3,3,0,0,0,3,3H21a3,3,0,0,0,3-3V11.19A2.978,2.978,0,0,0,23.121,9.069ZM15,22.007H9V18.073a3,3,0,0,1,6,0Zm7-1a1,1,0,0,1-1,1H17V18.073a5,5,0,0,0-10,0v3.934H3a1,1,0,0,1-1-1V11.19a1.008,1.008,0,0,1,.293-.707L9.878,2.9a3.008,3.008,0,0,1,4.244,0l7.585,7.586A1.008,1.008,0,0,1,22,11.19Z" />
+                </svg> Home
+            </a>
+            <a href="#">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="512" height="512">
+                    <path
+                        d="M7,0H4A4,4,0,0,0,0,4V7a4,4,0,0,0,4,4H7a4,4,0,0,0,4-4V4A4,4,0,0,0,7,0ZM9,7A2,2,0,0,1,7,9H4A2,2,0,0,1,2,7V4A2,2,0,0,1,4,2H7A2,2,0,0,1,9,4Z" />
+                    <path
+                        d="M20,0H17a4,4,0,0,0-4,4V7a4,4,0,0,0,4,4h3a4,4,0,0,0,4-4V4A4,4,0,0,0,20,0Zm2,7a2,2,0,0,1-2,2H17a2,2,0,0,1-2-2V4a2,2,0,0,1,2-2h3a2,2,0,0,1,2,2Z" />
+                    <path
+                        d="M7,13H4a4,4,0,0,0-4,4v3a4,4,0,0,0,4,4H7a4,4,0,0,0,4-4V17A4,4,0,0,0,7,13Zm2,7a2,2,0,0,1-2,2H4a2,2,0,0,1-2-2V17a2,2,0,0,1,2-2H7a2,2,0,0,1,2,2Z" />
+                    <path
+                        d="M20,13H17a4,4,0,0,0-4,4v3a4,4,0,0,0,4,4h3a4,4,0,0,0,4-4V17A4,4,0,0,0,20,13Zm2,7a2,2,0,0,1-2,2H17a2,2,0,0,1-2-2V17a2,2,0,0,1,2-2h3a2,2,0,0,1,2,2Z" />
+                </svg> Categories
+            </a>
+            <a href="#"><svg class="icon" xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24"
+                    width="512" height="512">
+                    <path d="M12,12A6,6,0,1,0,6,6,6.006,6.006,0,0,0,12,12ZM12,2A4,4,0,1,1,8,6,4,4,0,0,1,12,2Z" />
+                    <path
+                        d="M12,14a9.01,9.01,0,0,0-9,9,1,1,0,0,0,2,0,7,7,0,0,1,14,0,1,1,0,0,0,2,0A9.01,9.01,0,0,0,12,14Z" />
+                </svg> Artists</a>
+            <a href="#">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24">
+                    <path
+                        d="m13,2H0V0h13v2Zm0,4H0v2h13v-2ZM24,0v2h-4.5c-.275,0-.5.224-.5.5v16c0,3.033-2.468,5.5-5.5,5.5s-5.5-2.467-5.5-5.5,2.468-5.5,5.5-5.5c1.328,0,2.548.474,3.5,1.261V2.5c0-1.378,1.121-2.5,2.5-2.5h4.5Zm-7,18.5c0-1.93-1.57-3.5-3.5-3.5s-3.5,1.57-3.5,3.5,1.57,3.5,3.5,3.5,3.5-1.57,3.5-3.5Z" />
+                </svg> Playlists
+            </a>
+            <!-- Logout Div -->
+            <div class="mt-auto">
+                <a href="#" class="text-danger"> <svg class="icon" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="512" height="512">
+                        <path
+                            d="M22.763,10.232l-4.95-4.95L16.4,6.7,20.7,11H6.617v2H20.7l-4.3,4.3,1.414,1.414,4.95-4.95a2.5,2.5,0,0,0,0-3.536Z" />
+                        <path
+                            d="M10.476,21a1,1,0,0,1-1,1H3a1,1,0,0,1-1-1V3A1,1,0,0,1,3,2H9.476a1,1,0,0,1,1,1V8.333h2V3a3,3,0,0,0-3-3H3A3,3,0,0,0,0,3V21a3,3,0,0,0,3,3H9.476a3,3,0,0,0,3-3V15.667h-2Z" />
+                    </svg>Logout</a>
+            </div>
+        </div>
+
+
+        <!-- Main Content -->
+        <div class="main-content ">
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <input type="text" class="form-control " placeholder="Search for a song">
+                <div>
+
+
+                    <span class="me-2"><img class="user  " src="https://via.placeholder.com/25" alt="Music 1">
+
+                        Molly
+                        Hunter</span>
+                    <!-- <button class="btn btn-outline-warning">Premium</button> -->
+                </div>
+            </div>
+
+            <!-- Music Carousel -->
+            <div class="main">
+                <div class="currentplaying">
+                    <p class="heading">Currently Playing</p>
+                </div>
+                <!-- 
+                <div class="loader">
+                    <div class="song">
+                        <p class="name">Time in a Bottle</p>
+                        <p class="artist">Jim Corce</p>
+                    </div>
+                    <div class="albumcover"></div>
+
+                </div>
+                <div class="loader">
+                    <div class="song">
+                        <p class="name">My Way</p>
+                        <p class="artist">Frank Sinatra</p>
+                    </div>
+                    <div class="albumcover"></div>
+                    <div class="play"></div>
+                </div>
+                <div class="loader">
+                    <div class="song">
+                        <p class="name">Lemon Tree</p>
+                        <p class="artist">Fools Garden</p>
+                    </div>
+                    <div class="albumcover"></div>
+                    <div class="play"></div>
+                </div> -->
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <!-- Bottom Music Player -->
+    <div class="bottom-player align-content-center">
+        <audio id="aud" src="https://dl1.jattpendu.com/download/128k-wspaw/Aa-Raha-Hoon.mp3"> </audio>
+
+        <!-- Detail -->
+        <div class="  box">
+            <img src="https://via.placeholder.com/50" class="rounded" alt="Current Song">
+            <span class="ms-2">Echoes of Midnight</span>
+        </div>
+
+        <!-- Controller -->
+        <div class=" box ">
+            <!-- Backward -->
+            <button class="btn ctrl-button back">
+                <svg class="icon " xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1"
+                    viewBox="0 0 24 24" width="512" height="512">
+                    <path
+                        d="m18.809.44c-1.374-.695-2.934-.566-4.204.368l-9.604,7.675V1c0-.552-.447-1-1-1s-1,.448-1,1v22c0,.552.447,1,1,1s1-.448,1-1v-7.482l9.637,7.706c.697.513,1.512.784,2.354.784.628,0,1.24-.148,1.818-.44,1.372-.696,2.19-2.029,2.19-3.567V4.007c0-1.538-.818-2.871-2.191-3.567Zm.191,19.561c0,.781-.399,1.431-1.094,1.783-.686.349-1.492.264-2.053-.145L5.816,13.611c-.519-.38-.816-.967-.816-1.611s.298-1.231.816-1.611L15.82,2.396c.359-.264.761-.397,1.17-.397.307,0,.616.075.915.226.695.353,1.095,1.002,1.095,1.783v15.993Z" />
+                </svg>
+            </button>
+
+            <button class="btn ctrl-button" onclick="play()">
+                <!-- pause -->
+                <svg class="icon pause visually-hidden" xmlns="http://www.w3.org/2000/svg" id="Outline"
+                    viewBox="0 0 24 24" width="512" height="512">
+                    <path
+                        d="M6.5,0A3.5,3.5,0,0,0,3,3.5v17a3.5,3.5,0,0,0,7,0V3.5A3.5,3.5,0,0,0,6.5,0ZM8,20.5a1.5,1.5,0,0,1-3,0V3.5a1.5,1.5,0,0,1,3,0Z" />
+                    <path
+                        d="M17.5,0A3.5,3.5,0,0,0,14,3.5v17a3.5,3.5,0,0,0,7,0V3.5A3.5,3.5,0,0,0,17.5,0ZM19,20.5a1.5,1.5,0,0,1-3,0V3.5a1.5,1.5,0,0,1,3,0Z" />
+                </svg>
+                <!-- play -->
+                <svg class="icon play-btn" xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24"
+                    width="512" height="512">
+                    <path
+                        d="M20.494,7.968l-9.54-7A5,5,0,0,0,3,5V19a5,5,0,0,0,7.957,4.031l9.54-7a5,5,0,0,0,0-8.064Zm-1.184,6.45-9.54,7A3,3,0,0,1,5,19V5A2.948,2.948,0,0,1,6.641,2.328,3.018,3.018,0,0,1,8.006,2a2.97,2.97,0,0,1,1.764.589l9.54,7a3,3,0,0,1,0,4.836Z" />
+                </svg></button>
+
+            <!-- forward -->
+            <button class="btn ctrl-button next">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1"
+                    viewBox="0 0 24 24" width="512" height="512">
+                    <path
+                        d="m20,0c-.553,0-1,.448-1,1v7.482L9.363.783c-1.238-.909-2.798-1.039-4.173-.343-1.372.696-2.19,2.029-2.19,3.567v15.993c0,1.538.818,2.872,2.191,3.568.577.292,1.189.44,1.817.44.843,0,1.657-.271,2.388-.809l9.604-7.683v7.483c0,.552.447,1,1,1s1-.448,1-1V1c0-.552-.447-1-1-1Zm-1.851,13.637l-9.97,7.976c-.618.453-1.399.518-2.085.17-.695-.353-1.095-1.002-1.095-1.783V4.007c0-.78.399-1.43,1.094-1.782.303-.153.618-.229.926-.229.401,0,.791.127,1.128.374l10.036,8.018c.519.38.816.967.816,1.611s-.298,1.231-.851,1.637Z" />
+                </svg>
+            </button>
+        </div>
+        <!-- Range -->
+        <div class="box box-range align-items-center d-flex"> <input class="range-ctrl" type="range" value="0" id="range" onchange="onchnge(this.value)">
+        </div>
+
+        <!-- Volume -->
+        <div class="box align-items-center d-flex">
+            <div class="volume-icon">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="512" height="512">
+                    <path
+                        d="M20.807,4.29a1,1,0,0,0-1.415,1.415,8.913,8.913,0,0,1,0,12.59,1,1,0,0,0,1.415,1.415A10.916,10.916,0,0,0,20.807,4.29Z" />
+                    <path
+                        d="M18.1,7.291A1,1,0,0,0,16.68,8.706a4.662,4.662,0,0,1,0,6.588A1,1,0,0,0,18.1,16.709,6.666,6.666,0,0,0,18.1,7.291Z" />
+                    <path
+                        d="M13.82.2A12.054,12.054,0,0,0,6.266,5H5a5.008,5.008,0,0,0-5,5v4a5.008,5.008,0,0,0,5,5H6.266A12.059,12.059,0,0,0,13.82,23.8a.917.917,0,0,0,.181.017,1,1,0,0,0,1-1V1.186A1,1,0,0,0,13.82.2ZM13,21.535a10.083,10.083,0,0,1-5.371-4.08A1,1,0,0,0,6.792,17H5a3,3,0,0,1-3-3V10A3,3,0,0,1,5,7h1.8a1,1,0,0,0,.837-.453A10.079,10.079,0,0,1,13,2.465Z" />
+                </svg>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        // Play/Pause Functionality
+        function play() {
+            const audio = document.getElementById('aud');
+            const playBtn = document.querySelector('.play-btn');
+            const pauseBtn = document.querySelector('.pause');
+
+            if (audio.paused) {
+                audio.play();
+                playBtn.classList.add('visually-hidden');
+                pauseBtn.classList.remove('visually-hidden');
+                aud.addEventListener('timeupdate', () => {
+                    range.max = aud.duration;
+                    range.value = aud.currentTime;
+
+                })
+            } else {
+                audio.pause();
+                playBtn.classList.remove('visually-hidden');
+                pauseBtn.classList.add('visually-hidden');
+            }
+        }
+
+        function onchnge(val) {
+            aud.currentTime = val;
+        }
+        // Simulated song loader
+        document.addEventListener('DOMContentLoaded', () => {
+            const loaders = document.querySelectorAll('.loader');
+            loaders.forEach((loader, index) => {
+                loader.addEventListener('click', () => {
+                    // Highlight the selected song
+                    loaders.forEach(l => l.classList.remove('active'));
+                    loader.classList.add('active');
+
+                    // Simulate loading
+                    const loadingDiv = loader.querySelector('.loading');
+                    loadingDiv.classList.remove('hidden');
+                    setTimeout(() => {
+                        loadingDiv.classList.add('hidden');
+                    }, 2000); // Simulate a 2-second load time
+                });
+            });
+        });
+
+        function addsong(name, singer) {
+            const loader = `
+            <div class="loader" onclick="activeSong()">
+                <div class="song">
+                    <p class="name">${name}</p>
+                    <p class="artist">${singer}</p>
+                </div>
+                <div class="albumcover"></div>
+                <div class="play"></div>
+                <div class="loading visually-hidden">
+                    <div class="load"></div>
+                    <div class="load"></div>
+                    <div class="load"></div>
+                    <div class="load"></div>
+                </div>
+            </div>`;
+            document.querySelector('.main').innerHTML += loader;
+        }
+
+        function activeSong() {
+
+        }
+
+
+
+        // Add click event listener to dynamically created songs
+        /*function setupClickEvents() {
+            const loaders = document.querySelectorAll('.loader');
+            loaders.forEach(loader => {
+                loader.addEventListener('click', function() {
+                    // Reset all loaders
+                    document.querySelectorAll('.loading').forEach(loadingDiv => {
+                        loadingDiv.classList.remove('active');
+                    });
+                    document.querySelectorAll('.play').forEach(playIcon => {
+                        playIcon.classList.remove('hidden');
+                    });
+
+                    // Update the clicked loader
+                    const loadingDiv = this.querySelector('.loading');
+                    const playIcon = this.querySelector('.play');
+                    loadingDiv.classList.add('active');
+                    playIcon.classList.add('hidden');
+                });
+            });
+        }*/
+
+        // Example usage
+        addsong('The Way', 'Frank Sinatra');
+        addsong('Imagine', 'John Lennon');
+        addsong('Bohemian Rhapsody', 'Queen');
+        addsong('Bohemian Rhapsody', 'Queen');
+        addsong('Bohemian Rhapsody', 'Queen');
+        addsong('Bohemian Rhapsody', 'Queen');
+        addsong('Bohemian Rhapsody', 'Queen');
+        addsong('Bohemian Rhapsody', 'Queen');
+        addsong('Bohemian Rhapsody', 'Queen');
+
+        // Initialize click events after adding songs
+        /*setupClickEvents();*/
+    </script>
+</body>
+
+</html>
