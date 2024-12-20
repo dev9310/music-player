@@ -174,7 +174,7 @@ body {
     }
     /* Range controller */
     .range-ctrl {
-        width: 90vb;
+        width: 50vb;
     }
 }
 
@@ -212,14 +212,6 @@ body {
         margin-top: 1em;
         /* margin-right: 1em; */
         margin-left: 1em;
-    }
-    .icon {
-        fill: aliceblue;
-        /* Add a border color */
-        stroke-width: 1px;
-        width: 10px;
-        height: 10px;
-        margin: 2px;
     }
 }
 
@@ -279,14 +271,6 @@ body {
         margin: 1em;
         right: 0%;
     }
-    .icon {
-        fill: aliceblue;
-        /* Add a border color */
-        stroke-width: 1px;
-        width: 8px;
-        height: 8px;
-        margin: 2px;
-    }
 }
 
 
@@ -334,14 +318,6 @@ body {
     .main-content {
         padding: 1em;
         margin-top: 1em;
-    }
-    .icon {
-        fill: aliceblue;
-        /* Add a border color */
-        stroke-width: 1px;
-        width: 6px;
-        height: 6px;
-        margin: 2px;
     }
 }
 
