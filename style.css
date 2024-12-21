@@ -1,3 +1,27 @@
+/* Scroll Bar */
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #101619;
+    border-radius: 30px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+/* Default Css */
+
 * {
     user-select: none;
 }
@@ -6,71 +30,6 @@ body {
     background-color: #0b0f14;
     color: #fff;
     font-family: Arial, sans-serif;
-}
-
-
-/* Customize the scrollbar */
-
-::-webkit-scrollbar {
-    width: 6px;
-    /* Width of the scrollbar */
-    height: 6px;
-    /* Height of the horizontal scrollbar */
-}
-
-
-/* Customize the scrollbar track */
-
-::-webkit-scrollbar-track {
-    background: #101619;
-    /* Color of the track */
-    border-radius: 30px;
-}
-
-
-/* Customize the scrollbar thumb */
-
-::-webkit-scrollbar-thumb {
-    background: #888;
-    /* Color of the scrollbar thumb */
-    border-radius: 10px;
-}
-
-
-/* Customize the scrollbar thumb on hover */
-
-::-webkit-scrollbar-thumb:hover {
-    background: #555;
-    /* Color of the scrollbar thumb on hover */
-}
-
-.bottom-player {
-    display: flex;
-    background-color: #15191e;
-    color: #fff;
-    padding: 0.8rem;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.box {
-    display: inline-block;
-    padding: 10px;
-    margin: 5px;
-    border-radius: 5px;
-}
-
-.box-range {
-    margin-right: 1em;
-    /* Space between 3rd and 4th box */
-}
-
-.box:last-child {
-    float: right;
 }
 
 
@@ -85,11 +44,6 @@ body {
 
 
 /* Bottom player */
-
-.song-card img {
-    width: 100%;
-    border-radius: 12px;
-}
 
 .search-bar input {
     width: 50%;
@@ -126,7 +80,9 @@ body {
 /* For laptops and desktops */
 
 @media (min-width: 992px) {
-    body {}
+    body {
+        font-size: 16px;
+    }
     /* Sidebar */
     .sidebar {
         background-color: #15191e;
@@ -164,17 +120,11 @@ body {
         padding: 1em;
         padding-bottom: 1.1em;
         border-radius: 15px;
-        /* margin-right: 1em; */
         overflow-y: scroll;
         overflow-x: hidden;
-        /* Hides horizontal scrolling */
         margin: 1em;
         max-height: 100%;
         height: auto;
-    }
-    /* Range controller */
-    .range-ctrl {
-        width: 50vb;
     }
 }
 
@@ -182,11 +132,6 @@ body {
 /* For tablets (portrait and landscape) */
 
 @media (min-width: 767px) and (max-width: 992.98px) {
-    body {
-        background-color: #33a20f;
-        /* Example: light cyan background for tablets */
-        font-size: 16px;
-    }
     /* Sidebar */
     .sidebar {
         display: none;
@@ -210,7 +155,6 @@ body {
         border-radius: 15px;
         margin-bottom: 3em;
         margin-top: 1em;
-        /* margin-right: 1em; */
         margin-left: 1em;
     }
 }
@@ -230,19 +174,6 @@ body {
         border: none;
         color: white;
         font-size: 1.5rem;
-    }
-    /* Player */
-    .bottom-player {
-        display: flex;
-        background-color: #15191e;
-        color: #fff;
-        padding: 0.8rem;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        justify-content: space-between;
-        width: 100%;
     }
     /* Sidebar */
     .sidebar {
@@ -275,7 +206,6 @@ body {
         border-radius: 15px;
         margin-bottom: 3em;
         margin-top: 1em;
-        /* margin-right: 1em; */
         margin-left: 1em;
     }
     /* Main Content */
@@ -284,20 +214,6 @@ body {
         margin: 1em;
         right: 0%;
     }
-    /* Player */
-    .bottom-player {
-        display: none;
-        background-color: #15191e;
-        color: #fff;
-        padding: 0.8rem;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        justify-content: space-between;
-        width: 100%;
-    }
-    /* For small player */
 }
 
 
@@ -360,7 +276,7 @@ body {
 }
 
 
-/* For small player */
+/* Music player */
 
 .music-card {
     cursor: pointer;
@@ -435,10 +351,13 @@ body {
 }
 
 .icon-heart {
-    height: 24px;
-    width: 24px;
-    color: #ef4444;
+    
+    fill: red;
     cursor: pointer;
+    stroke-width: 1px;
+    width: 14px;
+    height: 14px;
+    margin: 4px;
 }
 
 .icon-star {
