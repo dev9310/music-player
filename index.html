@@ -246,7 +246,7 @@
         <div class="progress-container">
             <div class="progress-bar"></div>
         </div>
-        <div class="progress-time"><span>00:03</span><span>3:35</span></div>
+        <div class="progress-time"><span class="current-time">00:03</span><span class="total-time">3:35</span></div>
     </div>
 
 
@@ -263,8 +263,13 @@
             const pauseBtn = document.querySelector('.pause');
             const playBtnSm = document.querySelector('.play-sm-btn');
             const pauseBtnSm = document.querySelector('.pause-sm');
-            const progressBar = document.getElementsByClassName('progress-bar')
 
+
+            const currentTime = document.querySelector('.current-time');
+            const totalTime = document.querySelector('.total-time')
+
+            const progressBar = document.getElementsByClassName('progress-bar')
+            totalTime.textContent = convertToTime(aud.duration)
 
 
             if (audio.paused) {
@@ -276,6 +281,8 @@
                 aud.addEventListener('timeupdate', () => {
                     var percentage = ((Number(aud.currentTime / aud.duration) * 100))
                     progressBar[0].style.width = `${percentage}%`;
+
+                    currentTime.textContent = convertToTime(aud.currentTime);
 
                     range.max = aud.duration;
                     range.value = aud.currentTime;
@@ -292,6 +299,18 @@
 
         function onchnge(val) {
             aud.currentTime = val;
+        }
+
+        function convertToTime(floatValue) {
+            const totalSeconds = Math.round(floatValue); // Round to the nearest second
+            const minutes = Math.floor(totalSeconds / 60);
+            const seconds = totalSeconds % 60;
+
+            // Format minutes and seconds to always have 2 digits
+            const formattedMinutes = String(minutes).padStart(2, '0');
+            const formattedSeconds = String(seconds).padStart(2, '0');
+
+            return `${formattedMinutes}:${formattedSeconds}`;
         }
         // Simulated song loader
         document.addEventListener('DOMContentLoaded', () => {
