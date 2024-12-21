@@ -179,7 +179,13 @@
         progressBarCont.addEventListener('click', (event) => {
             const progressBarWidth = progressBarCont.offsetWidth;
             const clickPosition = event.offsetX;
-            console.log(Math.round((clickPosition / progressBarWidth) * 100));
+
+            if (aud.currentTime == 0) {
+                play();
+            }
+            aud.currentTime = (aud.duration * Math.round((clickPosition / progressBarWidth) * 100)) / 100;
+
+
         })
 
         function play() {
@@ -189,7 +195,6 @@
 
             totalTime.textContent = convertToTime(aud.duration)
 
-
             if (audio.paused) {
                 audio.play();
                 playBtn.classList.add('visually-hidden');
@@ -198,11 +203,7 @@
                 aud.addEventListener('timeupdate', () => {
                     var percentage = ((Number(aud.currentTime / aud.duration) * 100))
                     progressBar[0].style.width = `${percentage}%`;
-
                     currentTime.textContent = convertToTime(aud.currentTime);
-
-                    range.max = aud.duration;
-                    range.value = aud.currentTime;
 
                 })
             } else {
@@ -213,9 +214,7 @@
             }
         }
 
-        function onchnge(val) {
-            aud.currentTime = val;
-        }
+
 
         function convertToTime(floatValue) {
             const totalSeconds = Math.round(floatValue); // Round to the nearest second
@@ -253,6 +252,8 @@
             });
         });
 
+
+        // Add songs Dynamically
         function addsong(name, singer) {
             const loader = `
             <div class="loader" >
@@ -273,29 +274,6 @@
         }
 
 
-
-        // Add click event listener to dynamically created songs
-        /*function setupClickEvents() {
-            const loaders = document.querySelectorAll('.loader');
-            loaders.forEach(loader => {
-                loader.addEventListener('click', function() {
-                    // Reset all loaders
-                    document.querySelectorAll('.loading').forEach(loadingDiv => {
-                        loadingDiv.classList.remove('active');
-                    });
-                    document.querySelectorAll('.play').forEach(playIcon => {
-                        playIcon.classList.remove('hidden');
-                    });
-
-                    // Update the clicked loader
-                    const loadingDiv = this.querySelector('.loading');
-                    const playIcon = this.querySelector('.play');
-                    loadingDiv.classList.add('active');
-                    playIcon.classList.add('hidden');
-                });
-            });
-        }*/
-
         // Example usage
         addsong('The Way', 'Frank Sinatra');
         addsong('Imagine', 'John Lennon');
@@ -306,9 +284,6 @@
         addsong('Bohemian Rhapsody', 'Queen');
         addsong('Bohemian Rhapsody', 'Queen');
         addsong('Bohemian Rhapsody', 'Queen');
-
-        // Initialize click events after adding songs
-        /*setupClickEvents();*/
     </script>
 </body>
 
