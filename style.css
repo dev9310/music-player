@@ -305,8 +305,6 @@ body {
 
 @media (max-width: 575.98px) {
     body {
-        background-color: #93261a;
-        /* Example: light pink background for phones */
         font-size: 14px;
     }
     /* 3-dot menu  */
