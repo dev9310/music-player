@@ -488,7 +488,7 @@ body {
     position: relative;
     transform: rotate(180deg);
     margin-right: 1em;
-    padding-top: 1em;
+    padding-top: 4px;
     color: white;
     align-self: center;
 }
